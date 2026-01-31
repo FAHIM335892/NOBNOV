@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="NO BOAT NO VOTE - নৌকা ছাড়া কিসের ভোট? Create your campaign photo with the boat symbol.">
+  <title>NO BOAT NO VOTE | নৌকা ছাড়া কিসের ভোট?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+  <script type="module" crossorigin src="/assets/index-BK3pPjYF.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BG-lOIqd.css">
+</head>
+
+<body>
+  <div class="background-effects">
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+    <div class="bg-circle bg-circle-3"></div>
+  </div>
+
+  <header class="header">
+    <div class="header-content">
+      <img src="/assets/logo.png" alt="Bangladesh Awami League Logo" class="header-logo">
+      <div class="header-text">
+        <h1 class="slogan-en">NO BOAT NO VOTE</h1>
+        <p class="slogan-bn">নৌকা ছাড়া কিসের ভোট?</p>
+      </div>
+    </div>
+    <div class="header-taglines">
+      <span class="tagline">জয় বাংলা</span>
+      <span class="tagline-divider">•</span>
+      <span class="tagline">Joy Bangla</span>
+      <span class="tagline-divider">•</span>
+      <span class="tagline">জয় বঙ্গবন্ধু</span>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <section class="hero-section">
+      <h2 class="hero-title">Create Your Campaign Photo</h2>
+      <p class="hero-subtitle">আপনার ক্যাম্পেইন ছবি তৈরি করুন</p>
+    </section>
+
+    <section class="editor-section">
+      <div class="editor-card">
+        <!-- Upload Zone -->
+        <div id="uploadZone" class="upload-zone">
+          <div class="upload-content">
+            <div class="upload-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+            </div>
+            <h3 class="upload-title">Upload Your Photo</h3>
+            <p class="upload-subtitle">আপনার ছবি আপলোড করুন</p>
+            <p class="upload-hint">Click or drag & drop your image here</p>
+            <span class="upload-formats">Supports: JPG, PNG, WebP</span>
+          </div>
+          <input type="file" id="fileInput" accept="image/*" hidden>
+        </div>
+
+        <!-- Canvas Preview -->
+        <div id="previewContainer" class="preview-container hidden">
+          <div class="canvas-wrapper">
+            <canvas id="previewCanvas"></canvas>
+            <div class="canvas-hint">
+              <span>👆</span> Drag to reposition
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="controls">
+            <div class="control-group">
+              <label for="zoomSlider" class="control-label">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  <line x1="11" y1="8" x2="11" y2="14" />
+                  <line x1="8" y1="11" x2="14" y2="11" />
+                </svg>
+                <span>Zoom</span>
+              </label>
+              <div class="slider-container">
+                <input type="range" id="zoomSlider" min="50" max="200" value="100">
+                <span id="zoomValue" class="slider-value">100%</span>
+              </div>
+            </div>
+
+            <div class="button-group">
+              <button id="resetBtn" class="btn btn-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="1 4 1 10 7 10" />
+                  <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+                </svg>
+                Reset
+              </button>
+              <button id="downloadBtn" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Download Photo
+              </button>
+            </div>
+
+            <button id="changePhotoBtn" class="btn btn-ghost">
+              Change Photo • অন্য ছবি নির্বাচন করুন
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps-section">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Upload</h3>
+          <p>আপলোড করুন</p>
+        </div>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Adjust</h3>
+          <p>সামঞ্জস্য করুন</p>
+        </div>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Download</h3>
+          <p>ডাউনলোড করুন</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-slogan">
+        <span class="footer-slogan-bn">নৌকা মার্কায় ভোট দিন</span>
+        <span class="footer-divider">|</span>
+        <span class="footer-slogan-en">Vote for the Boat</span>
+      </div>
+      <p class="footer-party">বাংলাদেশ আওয়ামী লীগ • Bangladesh Awami League</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

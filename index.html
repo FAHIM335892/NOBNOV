@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NO BOAT NO VOTE | নৌকা ছাড়া কিসের ভোট?</title>
+    <meta name="description" content="নৌকা মার্কায় ভোট দিন - Create your campaign photo frame">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <!-- Background Effects -->
+    <div class="background-effects">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+    </div>
+
+    <!-- Mobile-First Single Column Layout -->
+    <main class="main-layout">
+
+        <!-- Hero Wrapper (Grouped for Desktop, separate for Mobile via CSS) -->
+        <div class="hero-wrapper">
+            <!-- Section 1: Taglines -->
+            <div class="hero-taglines">
+                <span>জয় বাংলা</span>
+                <span class="divider">•</span>
+                <span>জয় বঙ্গবন্ধু</span>
+            </div>
+
+            <!-- Section 2: Boat Symbol -->
+            <div class="hero-boat-section">
+                <img src="/assets/boat-symbol.png" alt="Boat Symbol" class="hero-boat">
+            </div>
+
+            <!-- Section 3: Main Slogan -->
+            <div class="hero-typography">
+                <div class="main-slogan">
+                    <span class="slogan-line">NO</span>
+                    <span class="slogan-line accent">BOAT</span>
+                    <span class="slogan-line">NO</span>
+                    <span class="slogan-line accent">VOTE</span>
+                </div>
+                <p class="bengali-slogan">নৌকা ছাড়া কিসের ভোট?</p>
+            </div>
+
+            <!-- Section 5: Party Branding (Moved here for desktop grouping, reordered on mobile via CSS) -->
+            <div class="hero-branding">
+                <img src="/assets/boat-logo.png" alt="Awami League Logo" class="hero-logo">
+                <p class="hero-party">বাংলাদেশ আওয়ামী লীগ</p>
+            </div>
+        </div>
+
+        <!-- Section 4: Upload Editor -->
+        <section class="editor-section">
+            <div class="editor-card">
+                <h2 class="editor-title">Create Your Photo</h2>
+                <p class="editor-subtitle">আপনার ছবি তৈরি করুন</p>
+
+                <!-- Upload Zone -->
+                <div id="uploadZone" class="upload-zone">
+                    <div class="upload-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                    </div>
+                    <p class="upload-text">Upload Your Photo</p>
+                    <p class="upload-subtext">ছবি আপলোড করুন</p>
+                    <span class="upload-formats">JPG, PNG, WebP</span>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                </div>
+
+                <!-- Preview Container (hidden initially) -->
+                <div id="previewContainer" class="preview-container hidden">
+                    <div class="canvas-wrapper">
+                        <canvas id="previewCanvas"></canvas>
+                    </div>
+
+                    <div class="controls">
+                        <div class="control-group">
+                            <span class="control-label">Zoom</span>
+                            <input type="range" id="zoomSlider" min="50" max="200" value="100">
+                            <span id="zoomValue" class="slider-value">100%</span>
+                        </div>
+
+                        <div class="button-group">
+                            <button id="resetBtn" class="btn btn-secondary">Reset</button>
+                            <button id="downloadBtn" class="btn btn-primary">Download</button>
+                        </div>
+
+                        <button id="changePhotoBtn" class="btn btn-ghost">Change Photo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

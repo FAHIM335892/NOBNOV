@@ -1,0 +1,661 @@
+/* ===== CSS Variables ===== */
+:root {
+  --primary-red: #CC0000;
+  --dark-red: #990000;
+  --bright-red: #E50000;
+  --white: #FFFFFF;
+  --off-white: #FFF8F8;
+  --dark: #1A0000;
+
+  --font-main: 'Poppins', sans-serif;
+  --font-bengali: 'Noto Sans Bengali', sans-serif;
+
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 60px rgba(255, 255, 255, 0.1);
+
+  --border-radius: 16px;
+  --border-radius-lg: 24px;
+
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, var(--dark-red) 0%, var(--primary-red) 50%, var(--bright-red) 100%);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ===== Background Effects ===== */
+.background-effects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+}
+
+.bg-circle-1 {
+  width: 800px;
+  height: 800px;
+  top: -300px;
+  left: -200px;
+}
+
+.bg-circle-2 {
+  width: 600px;
+  height: 600px;
+  bottom: -200px;
+  right: -200px;
+}
+
+/* ===== Main Layout - Mobile First ===== */
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  gap: 1.25rem;
+}
+
+/* ===== Hero Wrapper (Mobile: Invisible) ===== */
+.hero-wrapper {
+  display: contents;
+}
+
+/* ========================================= */
+/* 🔒 LOCKED: MOBILE LAYOUT ORDER - DO NOT CHANGE */
+/* The user has confirmed this order is perfect. */
+/* ========================================= */
+.hero-taglines {
+  order: 1;
+}
+
+.hero-boat-section {
+  order: 2;
+}
+
+.hero-typography {
+  order: 3;
+}
+
+.editor-section {
+  order: 4;
+}
+
+.hero-branding {
+  order: 5;
+}
+
+/* ========================================= */
+
+
+/* ===== Section 1: Taglines ===== */
+.hero-taglines {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 280px;
+  font-family: var(--font-bengali);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-taglines .divider {
+  opacity: 0.5;
+}
+
+/* ===== Section 2: Boat Symbol ===== */
+.hero-boat-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-boat {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+  animation: boatRock 4s ease-in-out infinite;
+}
+
+@keyframes boatRock {
+
+  0%,
+  100% {
+    transform: rotate(-2deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(2deg) translateY(-5px);
+  }
+}
+
+/* ===== Section 3: Typography ===== */
+.hero-typography {
+  text-align: center;
+}
+
+.main-slogan {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  line-height: 0.85;
+  margin-bottom: 0.75rem;
+  perspective: 1000px;
+}
+
+.slogan-line {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  color: var(--white);
+  text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+  animation: waveFloat 4s ease-in-out infinite;
+  transform-origin: center;
+  display: inline-block;
+}
+
+.slogan-line:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.slogan-line:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.slogan-line:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.slogan-line:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.slogan-line.accent {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFE0E0 50%, #FFFFFF 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: waveFloat 4s ease-in-out infinite, shimmer 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 15px rgba(255, 255, 255, 0.3));
+}
+
+.slogan-line.accent:nth-child(2) {
+  animation-delay: 0.2s, 0s;
+}
+
+.slogan-line.accent:nth-child(4) {
+  animation-delay: 0.6s, 1.5s;
+}
+
+@keyframes waveFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-4px) rotate(-0.5deg);
+  }
+
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  75% {
+    transform: translateY(4px) rotate(0.5deg);
+  }
+}
+
+@keyframes shimmer {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.bengali-slogan {
+  font-family: var(--font-bengali);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 1px;
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+
+  0%,
+  100% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+/* ===== Section 4: Editor Card ===== */
+.editor-section {
+  width: 100%;
+  max-width: 400px;
+}
+
+.editor-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.editor-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.editor-subtitle {
+  font-family: var(--font-bengali);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* ===== Upload Zone ===== */
+.upload-zone {
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: var(--border-radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.upload-zone:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
+}
+
+.upload-zone.dragover {
+  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.upload-icon {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.75rem;
+}
+
+.upload-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.upload-zone:hover .upload-icon {
+  color: var(--white);
+}
+
+.upload-text {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.upload-subtext {
+  font-family: var(--font-bengali);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+}
+
+.upload-formats {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0.25rem 0.6rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+/* ===== Preview Container ===== */
+.preview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.preview-container.hidden {
+  display: none;
+}
+
+.canvas-wrapper {
+  width: 100%;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--dark);
+}
+
+#previewCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: grab;
+}
+
+#previewCanvas:active {
+  cursor: grabbing;
+}
+
+/* ===== Controls ===== */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.control-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  min-width: 45px;
+}
+
+input[type="range"] {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
+  border: 3px solid var(--primary-red);
+}
+
+.slider-value {
+  min-width: 40px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+}
+
+.button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-main);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--white);
+  color: var(--primary-red);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.btn-ghost:hover {
+  color: var(--white);
+}
+
+/* ===== Section 5: Party Branding ===== */
+.hero-branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.hero-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.3));
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3px;
+}
+
+.hero-party {
+  font-family: var(--font-bengali);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Desktop Layout (Two Column) ===== */
+@media (min-width: 900px) {
+
+  /* Reset orders for Desktop */
+  .hero-taglines,
+  .hero-boat-section,
+  .hero-typography,
+  .editor-section,
+  .hero-branding {
+    order: unset;
+  }
+
+  .main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    min-height: 100vh;
+    padding: 0;
+    gap: 0;
+  }
+
+  /* IMPORTANT: Enable the wrapper on desktop to group left items */
+  .hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .hero-taglines {
+    max-width: 350px;
+    font-size: 1.25rem;
+    margin-top: -10vh;
+    /* Slight optical adjustment upwards */
+  }
+
+  .hero-boat {
+    width: 140px;
+  }
+
+  .slogan-line {
+    font-size: 5rem;
+  }
+
+  .bengali-slogan {
+    font-size: 1.8rem;
+  }
+
+  .hero-branding {
+    margin-top: 4rem;
+  }
+
+  .hero-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero-party {
+    font-size: 1.25rem;
+  }
+
+  /* Right side - Editor spans full height */
+  .editor-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    max-width: none;
+    height: 100%;
+  }
+
+  .editor-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 2.5rem;
+  }
+
+  .editor-title {
+    font-size: 1.75rem;
+  }
+
+  .upload-zone {
+    padding: 3.5rem 2rem;
+  }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 380px) {
+  .main-layout {
+    padding: 1rem 0.75rem;
+    gap: 1rem;
+  }
+
+  .hero-taglines {
+    font-size: 0.95rem;
+    max-width: 240px;
+  }
+
+  .hero-boat {
+    width: 80px;
+  }
+
+  .slogan-line {
+    font-size: 2.8rem;
+  }
+
+  .bengali-slogan {
+    font-size: 1.1rem;
+  }
+
+  .editor-card {
+    padding: 1rem;
+  }
+
+  .upload-zone {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .hero-party {
+    font-size: 1rem;
+  }
+}
+
+/* ===== Utilities ===== */
+.hidden {
+  display: none !important;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.3);
+}

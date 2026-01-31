@@ -1,0 +1,14 @@
+{
+  "name": "no-vote-no-boat",
+  "version": "1.0.0",
+  "description": "NO VOTE NO BOAT - Bangladesh Awami League Campaign Website",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
