@@ -549,13 +549,15 @@ input[type="range"]::-webkit-slider-thumb {
     height: 100%;
     padding: 2rem;
     gap: 1.5rem;
+    position: relative;
+    /* Needed for absolute footer */
   }
 
   .hero-taglines {
     max-width: 350px;
     font-size: 1.25rem;
-    margin-top: -10vh;
-    /* Slight optical adjustment upwards */
+    margin-top: -5vh;
+    /* Slight optical adjustment */
   }
 
   .hero-boat {
@@ -581,6 +583,15 @@ input[type="range"]::-webkit-slider-thumb {
 
   .hero-party {
     font-size: 1.25rem;
+  }
+
+  .developer-credit {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   /* Right side - Editor spans full height */
