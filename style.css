@@ -672,14 +672,13 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 /* ===== Developer Credit ===== */
-/* ===== Developer Credit ===== */
 .developer-credit {
   font-family: var(--font-main);
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.4);
   text-align: center;
-  margin-top: 3.5rem;
-  /* Increased spacing */
+  margin-top: 5.5rem;
+  /* Significantly increased spacing */
   font-weight: 400;
   letter-spacing: 0.5px;
   /* Mobile Order */
