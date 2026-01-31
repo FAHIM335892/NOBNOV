@@ -144,12 +144,12 @@ function showPreview() {
 
   // Scale so the image fills the ellipse area
   state.scale = (ELLIPSE_RADIUS_Y * 2) / minDimension;
-  if (state.scale < 0.5) state.scale = 0.5;
-  if (state.scale > 2) state.scale = 2;
+  if (state.scale < 0.1) state.scale = 0.1; // Allow zooming out more (was 0.5)
+  if (state.scale > 3) state.scale = 3;     // Allow zooming in more (was 2)
 
   // Update slider to match calculated scale
   const sliderValue = Math.round(state.scale * 100);
-  zoomSlider.value = Math.min(200, Math.max(50, sliderValue));
+  zoomSlider.value = Math.min(300, Math.max(10, sliderValue));
   zoomValue.textContent = `${zoomSlider.value}%`;
 
   // Reset position
@@ -257,11 +257,11 @@ function handleReset() {
   if (state.image) {
     const minDimension = Math.min(state.image.width, state.image.height);
     state.scale = (ELLIPSE_RADIUS_Y * 2) / minDimension;
-    if (state.scale < 0.5) state.scale = 0.5;
-    if (state.scale > 2) state.scale = 2;
+    if (state.scale < 0.1) state.scale = 0.1;
+    if (state.scale > 3) state.scale = 3;
 
     const sliderValue = Math.round(state.scale * 100);
-    zoomSlider.value = Math.min(200, Math.max(50, sliderValue));
+    zoomSlider.value = Math.min(300, Math.max(10, sliderValue));
     zoomValue.textContent = `${zoomSlider.value}%`;
   } else {
     state.scale = 1;
