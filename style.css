@@ -659,3 +659,32 @@ input[type="range"]::-webkit-slider-thumb {
 ::selection {
   background: rgba(255, 255, 255, 0.3);
 }
+
+/* ===== Developer Credit ===== */
+.developer-credit {
+  font-family: var(--font-main);
+  font-size: 0.75rem;
+  /* Checked: Small size */
+  color: rgba(255, 255, 255, 0.4);
+  /* Subtle opacity */
+  text-align: center;
+  margin-top: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  /* Mobile Order */
+  order: 6;
+  width: 100%;
+}
+
+.credit-name {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (min-width: 900px) {
+  .developer-credit {
+    margin-top: auto;
+    /* Push to bottom of container */
+    padding-top: 2rem;
+  }
+}
