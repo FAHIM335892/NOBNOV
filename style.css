@@ -672,14 +672,14 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 /* ===== Developer Credit ===== */
+/* ===== Developer Credit ===== */
 .developer-credit {
   font-family: var(--font-main);
   font-size: 0.75rem;
-  /* Checked: Small size */
   color: rgba(255, 255, 255, 0.4);
-  /* Subtle opacity */
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 3.5rem;
+  /* Increased spacing */
   font-weight: 400;
   letter-spacing: 0.5px;
   /* Mobile Order */
@@ -694,8 +694,11 @@ input[type="range"]::-webkit-slider-thumb {
 
 @media (min-width: 900px) {
   .developer-credit {
-    margin-top: auto;
-    /* Push to bottom of container */
-    padding-top: 2rem;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
   }
 }
