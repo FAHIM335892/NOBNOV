@@ -92,7 +92,11 @@ function setupEventListeners() {
 // ===== File Handling =====
 function handleFileSelect(e) {
   const file = e.target.files[0];
-  if (file) processFile(file);
+  if (file && file.type.startsWith('image/')) {
+    processFile(file);
+  } else if (file) {
+    alert('Please upload a valid image file (JPG, PNG, WebP).');
+  }
 }
 
 function handleDragOver(e) {
