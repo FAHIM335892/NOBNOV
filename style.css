@@ -659,24 +659,3 @@ input[type="range"]::-webkit-slider-thumb {
 ::selection {
   background: rgba(255, 255, 255, 0.3);
 }
-
-/* ===== Developer Credit ===== */
-.developer-credit {
-  font-family: var(--font-main);
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
-  text-align: center;
-  margin-top: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  /* Mobile Order */
-  order: 6;
-}
-
-@media (min-width: 900px) {
-  .developer-credit {
-    margin-top: auto; /* Push to bottom if in flex container */
-    padding-top: 2rem;
-    font-size: 0.85rem;
-  }
-}
